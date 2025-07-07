@@ -43,7 +43,12 @@ h1 {
   font-size: 1.1em;
   color: white;
   text-shadow: 1px 1px black;
-  z-index: 2;
+}
+
+.card-content {
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.2), transparent);
 }
 
 .card-name {
@@ -53,14 +58,6 @@ h1 {
 .card-hp {
   color: gold;
   text-shadow: 1px 1px black;
-}
-
-.card-content {
-  width: 100%;
-  padding: 20px;
-  background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.2), transparent);
-  position: relative;
-  z-index: 1;
 }
 
 .trait {
