@@ -2,71 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SoldierEX Cards</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <h1>SoldierEX Platoon Cards</h1>
 
-  <!-- Zoom Overlay -->
-  <div id="zoomOverlay" class="zoom-overlay">
-    <div class="zoom-card-container" id="zoomCardContent"></div>
-  </div>
-
-  <!-- Card Grid Container -->
   <div class="card-grid">
-    <!-- Card: Kengich -->
-    <div class="card">
-      <div class="card-header">
-        <span>SPC Kengich EX</span>
-        <span class="card-hp">HP 350</span>
+    <div class="card" style="background-image: url('./images/IMG_5575.jpeg');">
+      <div class="card-content">
+        <div class="card-header">
+          <span class="card-name">SPC Kengich EX</span>
+          <span class="card-hp">HP 350</span>
+        </div>
+        <div class="card-trait">🥱 Jolly: Maxed Out</div>
+        <div class="card-move">
+          <span class="move-name">Snoring</span>
+          <p class="move-desc">Prevents enemies (and friends) from sleeping. Very effective if used after 12hr shift.</p>
+        </div>
+        <div class="card-quote">"Loudest sleeper in the AO."</div>
       </div>
-      <div class="card-portrait" style="background-image: url('images/IMG_5575.jpeg');"></div>
-      <div class="card-trait">🥱 Jolly: Maxed Out</div>
-      <div class="card-move">
-        <div class="move-name">Snoring</div>
-        <div class="move-desc">Prevents enemies (and friends) from sleeping. Very effective if used after 12hr shift.</div>
-      </div>
-      <div class="card-quote">"Loudest sleeper in the AO."</div>
-    </div>
-
-    <!-- Card: Zapien -->
-    <div class="card">
-      <div class="card-header">
-        <span>SPC Zapien EX</span>
-        <span class="card-hp">HP 140</span>
-      </div>
-      <div class="card-portrait" style="background-image: url('images/zapien.jpeg');"></div>
-      <div class="card-trait">🔥 Loyalty: Unbreakable</div>
-      <div class="card-move">
-        <div class="move-name">Cut</div>
-        <div class="move-desc">Swift and clean fade. High precision, no hesitation.</div>
-      </div>
-      <div class="card-quote">"Zero fade, zero fear."</div>
     </div>
   </div>
-
-  <!-- Zoom Functionality Script -->
-  <script>
-    const overlay = document.getElementById('zoomOverlay');
-    const zoomCard = document.getElementById('zoomCardContent');
-
-    document.querySelectorAll('.card').forEach(card => {
-      card.addEventListener('click', () => {
-        zoomCard.innerHTML = card.innerHTML;
-        overlay.classList.add('visible');
-      });
-    });
-
-    overlay.addEventListener('click', (e) => {
-      if (e.target === overlay) {
-        overlay.classList.remove('visible');
-        zoomCard.innerHTML = '';
-      }
-    });
-  </script>
 </body>
 </html>
+
 
