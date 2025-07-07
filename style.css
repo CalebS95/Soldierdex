@@ -1,18 +1,19 @@
+/* Global styles */
 body {
-  background: #121212;
   font-family: 'Segoe UI', sans-serif;
-  color: white;
-  text-align: center;
-  padding: 20px;
   margin: 0;
+  padding: 30px;
+  background: #f2f2f2;
+  text-align: center;
 }
 
 h1 {
-  font-size: 2em;
   margin-bottom: 30px;
+  font-size: 2.5rem;
+  text-shadow: 1px 1px 2px #aaa;
 }
 
-/* Card Grid Layout */
+/* Grid container */
 .card-grid {
   display: flex;
   flex-wrap: wrap;
@@ -20,111 +21,59 @@ h1 {
   gap: 20px;
 }
 
-/* Individual Card Styling */
+/* Card style */
 .card {
-  width: 300px;
-  background: linear-gradient(to bottom right, #4e2a84, #772ce8);
+  width: 340px;
+  height: 480px;
+  background-size: cover;
+  background-position: center;
   border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+/* Overlay content */
+.card-content {
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  width: 100%;
   padding: 20px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
-  cursor: pointer;
-  transition: transform 0.3s ease;
+  box-sizing: border-box;
 }
 
-.card:hover {
-  transform: scale(1.05);
-}
-
+/* Card inner layout */
 .card-header {
   display: flex;
   justify-content: space-between;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1.1rem;
   margin-bottom: 10px;
 }
 
-.card-hp {
-  color: #ffeb3b;
-}
-
-.card-portrait {
-  width: 100%;
-  height: 180px;
-  background-size: cover;
-  background-position: center;
-  border: 2px solid white;
-  border-radius: 12px;
-  margin-bottom: 15px;
-}
-
 .card-trait {
-  font-size: 15px;
-  margin: 8px 0;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
 }
 
-.card-move {
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: 10px;
-  padding: 10px;
-  margin-top: 10px;
-  text-align: left;
-}
-
-.move-name {
+.card-move .move-name {
   font-weight: bold;
-  font-size: 16px;
+  display: block;
+  margin-bottom: 4px;
 }
 
-.move-desc {
-  font-size: 14px;
+.card-move .move-desc {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
 }
 
-.card-footer, .card-quote {
-  font-size: 12px;
-  color: #ccc;
-  margin-top: 10px;
+.card-quote {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: #ddd;
 }
 
-/* Zoom Overlay */
-.zoom-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(10, 10, 10, 0.85);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  backdrop-filter: blur(5px);
-}
-
-.zoom-overlay.visible {
-  display: flex;
-}
-
-.zoom-card-container .card {
-  width: 360px;
-  background: #772ce8;
-  color: white;
-  padding: 25px;
-  border-radius: 20px;
-  box-shadow: 0 0 40px rgba(255,255,255,0.2);
-  animation: zoomIn 0.3s ease;
-}
-
-/* Animation */
-@keyframes zoomIn {
-  from {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
 
 
