@@ -16,7 +16,10 @@ h1 {
   display: flex;
   justify-content: center;
   margin-top: 40px;
+  gap: 30px; /* 👈 this adds spacing between cards */
+  flex-wrap: wrap; /* optional: lets cards wrap on small screens */
 }
+
 
 .card {
   width: 320px;
