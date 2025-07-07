@@ -1,143 +1,130 @@
-/* Reset and basic styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  background: url('https://www.pokemon.com/static-assets/content-assets/cms2/img/misc/virtual-backgrounds/sword-shield/sword-shield-background-6.jpg') no-repeat center center fixed;
-  background-size: cover;
+  background: #121212;
   font-family: 'Segoe UI', sans-serif;
-  color: #333;
-  padding: 20px;
-}
-
-/* Header */
-h1 {
+  color: white;
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  color: white;
-  text-shadow: 1px 1px 4px black;
+  padding: 20px;
+  margin: 0;
 }
 
-/* Card grid layout */
+h1 {
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
+/* Card Grid Layout */
 .card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 30px;
-  justify-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
-/* Card styles */
+/* Individual Card Styling */
 .card {
-  background: linear-gradient(to bottom right, #b466d8, #6a00c1);
-  width: 260px;
-  border-radius: 16px;
-  padding: 12px;
-  color: white;
+  width: 300px;
+  background: linear-gradient(to bottom right, #4e2a84, #772ce8);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
   cursor: pointer;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
   transition: transform 0.3s ease;
-  position: relative;
-  border: 2px solid white;
 }
 
 .card:hover {
   transform: scale(1.05);
 }
 
-/* Card Image */
-.card img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 12px;
-  border: 2px solid white;
-}
-
-/* Card Text Sections */
 .card-header {
   display: flex;
   justify-content: space-between;
   font-weight: bold;
+  font-size: 18px;
   margin-bottom: 10px;
 }
 
-.card-title {
-  font-size: 1.1rem;
+.card-hp {
+  color: #ffeb3b;
 }
 
-.card-hp {
-  color: #ffd700;
+.card-portrait {
+  width: 100%;
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid white;
+  border-radius: 12px;
+  margin-bottom: 15px;
 }
 
 .card-trait {
-  font-size: 0.95rem;
-  margin-top: 8px;
+  font-size: 15px;
+  margin: 8px 0;
 }
 
 .card-move {
-  margin-top: 10px;
   background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 10px;
   padding: 10px;
-  border-radius: 8px;
-  border: 1px solid rgba(255,255,255,0.3);
+  margin-top: 10px;
+  text-align: left;
 }
 
 .move-name {
   font-weight: bold;
-  font-size: 0.95rem;
+  font-size: 16px;
 }
 
 .move-desc {
-  font-size: 0.85rem;
+  font-size: 14px;
 }
 
-/* Footer Quote */
-.card-footer {
-  text-align: center;
-  font-size: 0.75rem;
+.card-footer, .card-quote {
+  font-size: 12px;
+  color: #ccc;
   margin-top: 10px;
-  color: #ddd;
-  font-style: italic;
 }
 
-/* Zoom Modal */
-.modal {
+/* Zoom Overlay */
+.zoom-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.85);
-  display: flex;
-  align-items: center;
+  background: rgba(10, 10, 10, 0.85);
+  display: none;
   justify-content: center;
-  z-index: 999;
-  visibility: hidden;
-  opacity: 0;
-  transition: all 0.3s ease;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(5px);
 }
 
-.modal.active {
-  visibility: visible;
-  opacity: 1;
+.zoom-overlay.visible {
+  display: flex;
 }
 
-.modal-content {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  max-width: 90%;
-  max-height: 90%;
-  overflow-y: auto;
-  box-shadow: 0 0 20px black;
+.zoom-card-container .card {
+  width: 360px;
+  background: #772ce8;
+  color: white;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(255,255,255,0.2);
+  animation: zoomIn 0.3s ease;
 }
 
-.modal-content img {
-  width: 100%;
-  border-radius: 12px;
+/* Animation */
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
+
 
