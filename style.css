@@ -16,20 +16,33 @@ h1 {
   display: flex;
   justify-content: center;
   margin-top: 40px;
-  gap: 30px; /* 👈 this adds spacing between cards */
-  flex-wrap: wrap; /* optional: lets cards wrap on small screens */
+  gap: 30px; /* spacing between cards */
+  flex-wrap: wrap; /* wraps on smaller screens */
 }
 
-
+/* Outer gray border wrapper */
 .card {
   width: 320px;
   height: 500px;
-  background-size: cover;
-  background-position: center;
+  background-color: #e6e6e6; /* Light gray like a Pokémon border */
+  padding: 6px; /* Creates the border space */
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
   position: relative;
-  color: white;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Inner content layer with background image */
+.card-inner {
+  background-size: cover;
+  background-position: center;
+  border-radius: 14px;
+  width: 100%;
+  height: 100%;
+  position: relative;
   display: flex;
   align-items: flex-end;
   overflow: hidden;
@@ -51,7 +64,10 @@ h1 {
 .card-content {
   width: 100%;
   padding: 20px;
-  background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.2), transparent);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.2), transparent);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .card-name {
@@ -93,10 +109,3 @@ h1 {
   font-size: 0.9em;
   text-shadow: 1px 1px black;
 }
-
-
-
-
-
-
-
