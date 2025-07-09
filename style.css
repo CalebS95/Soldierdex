@@ -14,12 +14,19 @@ h1 {
 
 .card-grid {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 30px;
   margin-top: 40px;
-  gap: 30px; /* 👈 this adds spacing between cards */
-  flex-wrap: wrap; /* optional: lets cards wrap on small screens */
 }
 
+/* Outer gray border around each card */
+.card-border {
+  background-color: #dcdcdc; /* light gray */
+  border-radius: 26px;        /* outer rounded corners */
+  padding: 6px;               /* space between border and inner card */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
 
 .card {
   width: 320px;
@@ -46,12 +53,16 @@ h1 {
   font-size: 1.1em;
   color: white;
   text-shadow: 1px 1px black;
+  z-index: 2;
 }
 
-.card-content {
+.card-overlay {
   width: 100%;
   padding: 20px;
-  background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.2), transparent);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.2), transparent);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .card-name {
